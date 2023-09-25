@@ -31,7 +31,7 @@ HANDLE MemoryUtil::OpenProcessByName(const char* processName)
 
         /* Open process with read and write access */
         DWORD processId = processes[i];
-        HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, processId);
+        HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, processId);
 
         if (hProcess)
         {

@@ -2,7 +2,7 @@
 
 #include <windows.h>
 
-class FpsUnlocker {
+class FpsPatcher {
 
     private:
 
@@ -14,14 +14,15 @@ class FpsUnlocker {
 
         /* Fps addresses */
         uintptr_t* fpsAddresses;
+        int numAddresses;
 
     public:
 
         /* Constructor */
-        FpsUnlocker(HANDLE hProcess, uintptr_t lpBaseOfDll);
+        FpsPatcher(HANDLE hProcess, uintptr_t lpBaseOfDll);
 
         /* Gets the FPS */
-        int GetFps();
+        void GetFps();
 
         /* Sets the FPS */
         void SetFps(int fps);
